@@ -1,5 +1,6 @@
 import React from 'react'
 import './Recipe.css'
+import {Link} from "react-router-dom"
 const Recipe = ({el}) => {
   return (
     <div>
@@ -10,7 +11,7 @@ const Recipe = ({el}) => {
       <span className="card-author subtle">John Smith</span>
       <h2 className="card-title">{el.recipe.label}</h2>
       <span className="card-description subtle">These last few weeks I have been working hard on a new brunch recipe for you all.</span>
-      <div className="card-read">Read</div>
+    <Link to={`/Recipedetails/${el.recipe.uri.slice(51)}`} > <div className="card-read">Read</div></Link>
       <span className="card-tag card-circle subtle">C</span>
     </div>
     <img src={el.recipe.image} alt={el.recipe.label} className="card-media" />
